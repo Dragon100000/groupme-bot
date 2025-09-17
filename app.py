@@ -5,7 +5,7 @@ import random
 
 random_word_bank=[]
 question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
-basic_response=["","ok","fr","lol", "what?"]
+basic_response=["","ok","fr","lol", "what?","hmmmm...^ok"]
 greetings=["hi","hello","heyyyyy","wsp","wud"]
 
 app = Flask(__name__)
@@ -17,24 +17,29 @@ def webhook():
   sender = data.get('name')
   text = data.get('text').lower()
 
-  # Avoid replying to itself
-  if sender != "clank": # Replace with your actual bot name
+  
+  if sender != "clank": 
+    for i in greetings:
+      if greetings[i] in text:
+        message = f"hello, {sender}!!!"
     if "?" in text:
       message = random.choice(question_response)
       
-    elif "hi" in text || "hey" in text:
-      message = f"hello, {sender}!!!"
-
     elif "bruh" in text || text=="..." || "bro" in text:
       #dont say anything
+    elif text == "double send":
+      message="1^2"
     else:
       if random.randomint(1,10)>5:
         message = random.choice(basic_response)
-    
-    requests.post("https://api.groupme.com/v3/bots/post", json={
-    "bot_id": BOT_ID,
-    "text": message
-    })
+      else:
+        message = "no response"
+    mess_arr=message.split("^")
+    for i in mess_arr:
+      requests.post("https://api.groupme.com/v3/bots/post", json={
+      "bot_id": BOT_ID,
+      "text": mess_arr
+      })
   
   return "ok", 200
 
