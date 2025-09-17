@@ -25,7 +25,7 @@ def webhook():
     if "?" in text:
       message = random.choice(question_response)
       
-    elif "bruh" in text || text=="..." || "bro" in text:
+    elif "bruh" in text or text=="..." or "bro" in text:
       #dont say anything
     elif text == "double send":
       message="1^2"
