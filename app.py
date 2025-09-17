@@ -1,6 +1,7 @@
 from flask import Flask, request
 import requests
 import os
+import random
 
 random_word_bank=[]
 question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
