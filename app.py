@@ -12,13 +12,15 @@ BOT_ID = os.getenv("GROUPME_BOT_ID")
 def webhook():
   data = request.get_json()
   sender = data.get('name')
-  text = data.get('text')
+  text = data.get('text').lower()
 
   # Avoid replying to itself
   if sender != "clank": # Replace with your actual bot name
     if "?" in text:
-      #message=question_response[random(0,15)]
-      message = "you responded with a question!!!"
+      message = question_response[random(0,15)]
+      
+    else if "hi" in text:
+      message = f"hello, {sender}!!!"
     else:
       message = f"\"{text}\""
     
