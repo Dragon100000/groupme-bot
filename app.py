@@ -21,7 +21,7 @@ def webhook():
   if sender != "clank": 
     for i in greetings:
       if greetings[i] in text:
-        message = f"hello, {sender}!!!"
+        message = f"{random.choice(greetings}, {sender}!!!"
     if "?" in text:
       message = random.choice(question_response)
       
@@ -30,7 +30,7 @@ def webhook():
     elif text == "double send":
       message="1^2"
     else:
-      if random.randomint(1,10)>5:
+      if random.randomint(1,10)>50:
         message = random.choice(basic_response)
       else:
         message = "no response"
