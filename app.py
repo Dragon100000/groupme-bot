@@ -15,7 +15,7 @@ def webhook():
   text = data.get('text')
 
   # Avoid replying to itself
-  if sender != "friend bot": # Replace with your actual bot name
+  if sender != "clank": # Replace with your actual bot name
     if "?" in text:
       message=question_response[random(0,14)]
     else:
