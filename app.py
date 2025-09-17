@@ -19,7 +19,7 @@ def webhook():
     if "?" in text:
       message = question_response[random(0,15)]
       
-    else if "hi" in text:
+    elif "hi" in text:
       message = f"hello, {sender}!!!"
     else:
       message = f"\"{text}\""
