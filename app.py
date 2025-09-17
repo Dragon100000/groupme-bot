@@ -11,15 +11,15 @@ def webhook():
   sender = data.get('name')
   text = data.get('text')
 
-# Avoid replying to itself
-if sender != "formbot": # Replace with your actual bot name
-  message = f"{sender} said: {text}"
-  requests.post("https://api.groupme.com/v3/bots/post", json={
-  "bot_id": BOT_ID,
-  "text": message
-})
-
-return "ok", 200
+  # Avoid replying to itself
+  if sender != "formbot": # Replace with your actual bot name
+    message = f"{sender} said: {text}"
+    requests.post("https://api.groupme.com/v3/bots/post", json={
+    "bot_id": BOT_ID,
+    "text": message
+    })
+  
+  return "ok", 200
 
 @app.route('/')
 def index():
