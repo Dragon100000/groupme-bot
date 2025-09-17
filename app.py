@@ -17,7 +17,8 @@ def webhook():
   # Avoid replying to itself
   if sender != "clank": # Replace with your actual bot name
     if "?" in text:
-      message=question_response[random(0,14)]
+      #message=question_response[random(0,14)]
+      message="you responded with a question!!!"
     else:
       message = f"{sender} said: {text}"
     
