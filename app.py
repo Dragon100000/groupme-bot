@@ -5,6 +5,7 @@ import random
 
 random_word_bank=[]
 question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
+basic_response=["","ok","fr","cap","lol"]
 
 app = Flask(__name__)
 BOT_ID = os.getenv("GROUPME_BOT_ID")
@@ -23,7 +24,7 @@ def webhook():
     elif "hi" in text:
       message = f"hello, {sender}!!!"
     else:
-      message = f"\"{text}\""
+      message = random.choice(basic_response)
     
     requests.post("https://api.groupme.com/v3/bots/post", json={
     "bot_id": BOT_ID,
