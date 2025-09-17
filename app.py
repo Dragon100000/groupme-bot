@@ -12,7 +12,7 @@ def webhook():
   text = data.get('text')
 
   # Avoid replying to itself
-  if sender != "formbot": # Replace with your actual bot name
+  if sender != "friend bot": # Replace with your actual bot name
     message = f"{sender} said: {text}"
     requests.post("https://api.groupme.com/v3/bots/post", json={
     "bot_id": BOT_ID,
