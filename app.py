@@ -18,7 +18,7 @@ def webhook():
   # Avoid replying to itself
   if sender != "clank": # Replace with your actual bot name
     if "?" in text:
-      message = question_response[random.randomint(0,15)]
+      message = random.choice(question_response)
       
     elif "hi" in text:
       message = f"hello, {sender}!!!"
