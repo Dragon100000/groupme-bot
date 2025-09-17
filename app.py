@@ -3,7 +3,7 @@ import requests
 import os
 
 app = Flask(__name__)
-BOT_ID = os.getenv("268c69b9075a239bdc95e127b9")
+BOT_ID = os.getenv("GROUPME_BOT_ID")
 
 @app.route('/', methods=['POST'])
 def webhook():
