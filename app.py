@@ -21,7 +21,7 @@ def webhook():
   
   if sender != "clank": 
     for i in greetings:
-      if greetings[i] in text:
+      if i in text:
         message = f"{random.choice(greetings)}, {sender}!!!"
     if "?" in text:
       message = random.choice(question_response)
