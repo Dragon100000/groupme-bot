@@ -20,12 +20,12 @@ def webhook():
 
   
   if sender != "clank": 
-    for i in greetings:
-      if i in text:
-        message = f"{random.choice(greetings)}, {sender}!!!"
+    
     if "?" in text:
       message = random.choice(question_response)
       
+    elif any(word in text for word in greetings):
+      message = f"{random.choice(greetings)}, {sender}!!!"
     elif any(word in text for word in bruh_response):
       message="null"
     elif text == "double send":
@@ -36,13 +36,13 @@ def webhook():
       else:
         message = "no response"
 
-    if "!-" in message:
-      message="wud"
+    #if "!-" in message:
+      #message="wud"
     mess_arr=message.split("^")
     for i in mess_arr:
       requests.post("https://api.groupme.com/v3/bots/post", json={
       "bot_id": BOT_ID,
-      "text": mess_arr
+      "text": i
       })
   
   return "ok", 200
