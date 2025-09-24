@@ -18,10 +18,7 @@ def webhook():
   sender = data.get('name')
   text = data.get('text').lower()
 
-  requests.post("https://api.groupme.com/v3/bots/post", json={
-    "bot_id": BOT_ID,
-    "text": "hi im here"
-  })
+  
   if sender != "clank": 
     for i in greetings:
       if i in text:
