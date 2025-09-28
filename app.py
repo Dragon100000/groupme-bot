@@ -20,10 +20,7 @@ def webhook():
 
   
   if sender != "clank": 
-    requests.post("https://api.groupme.com/v3/bots/post", json={
-      "bot_id": BOT_ID,
-      "text": "i work paritally"
-      })
+    
     if "?" in text:
       message = random.choice(question_response)
       
