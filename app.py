@@ -21,8 +21,10 @@ def webhook():
   
   if sender != "clank": 
     
-    if "?" in text:
-      message = random.choice(question_response)
+    if "or" in text:
+      jsor=text.split(":")[1]
+      options=jsor.split(" or ")
+      message=options[random.randint(0,options.length-1)]
       
     elif any(word in text for word in greetings):
       message = f"{random.choice(greetings)}, {sender}!!!"
@@ -34,10 +36,8 @@ def webhook():
       message=":("
     elif "mb" in text:
       message = "dw ur good"
-    elif "or" in text:
-      jsor=text.split(":")[1]
-      options=jsor.split(" or ")
-      message=options[random.randint(0,options.length-1)]
+    elif "?" in text:
+      message = random.choice(question_response)
       
     else:
       
