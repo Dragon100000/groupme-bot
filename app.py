@@ -30,9 +30,11 @@ def webhook():
       message="null"
     elif text == "double send":
       message="1^2"
+    elif ":(" in text:
+      message=":("
     else:
       message = "other"
-      if random.randint(1,10)>5:
+      if random.randint(1, 10)>5:
         message = random.choice(basic_response)
       else:
         message = "no response"
