@@ -32,6 +32,8 @@ def webhook():
       message="1^2"
     elif ":(" in text:
       message=":("
+    elif "mb" in text:
+      message = "dw ur good"
     else:
       message = "other"
       if random.randint(1, 10)>1:
