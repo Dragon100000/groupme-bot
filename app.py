@@ -35,7 +35,7 @@ def webhook():
     elif "mb" in text:
       message = "dw ur good"
     else:
-      message = "other"
+      
       if random.randint(1, 10)>1:
         message = random.choice(basic_response)
       else:
