@@ -24,7 +24,7 @@ def webhook():
     if " or " in text:
       jsor=text.split(":")[1]
       options=jsor.split(" or ")
-      message=options[random.choice(options)]
+      message=random.choice(options)
       
     elif any(word in text for word in greetings):
       message = f"{random.choice(greetings)}, {sender}!!!"
