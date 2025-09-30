@@ -34,7 +34,7 @@ def webhook():
       message=":("
     else:
       message = "other"
-      if random.randint(1, 10)>5:
+      if random.randint(1, 10)>9:
         message = random.choice(basic_response)
       else:
         message = "no response"
