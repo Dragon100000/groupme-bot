@@ -32,7 +32,7 @@ def webhook():
       message="1^2"
     else:
       message = "other"
-      if random.randomint(1,10)>5:
+      if random.randint(1,10)>5:
         message = random.choice(basic_response)
       else:
         message = "no response"
