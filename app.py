@@ -3,7 +3,7 @@ import requests
 import os
 import random
 
-random_word_bank=[]
+simple_responses=[[":(":":(","mb":"dw ur good"],[]]
 question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
 basic_response=["","ok","fr","lol", "what?","hmmmm...^ok"]
 greetings=["hi!","hello","hey","wsp","!-wud"]
@@ -32,10 +32,8 @@ def webhook():
       message="null"
     elif text == "double send":
       message="1^2"
-    elif ":(" in text:
-      message=":("
-    elif "mb" in text:
-      message = "dw ur good"
+    elif any(word in text for word in simple_responses[0]):
+      message=simple_response[0][word]
     elif "?" in text:
       message = random.choice(question_response)
       
