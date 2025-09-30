@@ -34,6 +34,11 @@ def webhook():
       message=":("
     elif "mb" in text:
       message = "dw ur good"
+    elif "or" in text:
+      jsor=text.split(":")[1]
+      options=jsor.split(" or ")
+      message=options[random.randint(0,options.length-1)]
+      
     else:
       
       if random.randint(1, 10)>1:
