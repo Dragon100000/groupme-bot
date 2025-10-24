@@ -2,12 +2,15 @@ from flask import Flask, request
 import requests
 import os
 import random
+import re
 
-simple_responses=[[":(":":(","mb":"dw ur good"],[]]
+simple_responses={":(":":(","mb":"dw ur good","nvm":"ok"}
+
 question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
 basic_response=["","ok","fr","lol", "what?","hmmmm...^ok"]
 greetings=["hi!","hello","hey","wsp","!-wud"]
 bruh_response=["bruh","bro","...","wth","tf"]
+reversePronouns={"me":"you","my":"your","i","you"}
 
 app = Flask(__name__)
 BOT_ID = os.getenv("GROUPME_BOT_ID")
@@ -32,7 +35,7 @@ def webhook():
       message="null"
     elif text == "double send":
       message="1^2"
-    elif any(word in text for word in simple_responses[0]):
+    elif any(word in text for word in simple_responses):
       message=simple_response[0][word]
     elif "?" in text:
       message = random.choice(question_response)
@@ -46,6 +49,12 @@ def webhook():
 
     #if "!-" in message:
       #message="wud"
+    
+    for old, new in reversePronouns.items():
+      pattern = r"\b" + re.escape(old) + r"\b"  # match whole words only
+      message = re.sub(pattern, new, message, flags=re.IGNORECASE)
+    
+    
     mess_arr=message.split("^")
     for i in mess_arr:
       requests.post("https://api.groupme.com/v3/bots/post", json={
