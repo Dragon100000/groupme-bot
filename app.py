@@ -4,13 +4,23 @@ import os
 import random
 import re
 
-simple_responses={":(":":(","mb":"dw ur good","nvm":"ok","clank":"layl"}
-
-question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
+simple_responses={
+  ":(":[":("],
+  "sad":[":("],
+  "mb":["dw ur good"],
+  "nvm":["ok"],
+  "clank":["layl","yes?","yes","wut you need?","yes i here"],
+  "double text":["1^2"]
+  "?":["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
+}
 basic_response=["","ok","fr","lol", "what?","hmmmm...^ok"]
 greetings=["hi","hello","hey","wsp","!-wud"]
 bruh_response=["bruh","bro","...","wth","tf"]
-reversePronouns={"me":"you","my":"your","i":"you"}
+reversePronouns={
+  "me":"you",
+  "my":"your",
+  "i":"you"
+}
 
 app = Flask(__name__)
 BOT_ID = os.getenv("GROUPME_BOT_ID")
@@ -24,24 +34,26 @@ def webhook():
   
   if sender != "clank": 
     
+    #choose from or
     if " or " in text:
       jsor=text.split(":")[1]
       options=jsor.split(" or ")
       message=random.choice(options)
       
+    #greet
     elif any(word in text for word in greetings):
       message = f"{random.choice(greetings)}, {sender}!!!"
+      
+    #bruh
     elif any(word in text for word in bruh_response):
       message="null"
-    elif text == "double send":
-      message="1^2"
+      
+    #simple responses
     elif any(word in text for word in simple_responses):
-      message=simple_response[word]
-    elif "?" in text:
-      message = random.choice(question_response)
+      message=simple_response[word][random.choice(simple_response[word])
       
+    #other
     else:
-      
       if random.randint(1, 10)>1:
         message = random.choice(basic_response)
       else:
