@@ -50,7 +50,7 @@ def webhook():
       
     #simple responses
     elif any(word in text for word in simple_responses):
-      message=simple_response[word][random.choice(simple_response[word])
+      message=simple_response[word][random.choice(simple_response[word])]
       
     #other
     else:
