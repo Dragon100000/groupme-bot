@@ -8,7 +8,7 @@ simple_responses={":(":":(","mb":"dw ur good","nvm":"ok","clank":"layl"}
 
 question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
 basic_response=["","ok","fr","lol", "what?","hmmmm...^ok"]
-greetings=["hi!","hello","hey","wsp","!-wud"]
+greetings=["hi","hello","hey","wsp","!-wud"]
 bruh_response=["bruh","bro","...","wth","tf"]
 reversePronouns={"me":"you","my":"your","i":"you"}
 
