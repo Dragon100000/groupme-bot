@@ -36,7 +36,11 @@ def webhook():
     
     #choose from or
     if " or " in text:
-      text=text+":"
+      text=":"+text
+      requests.post("https://api.groupme.com/v3/bots/post", json={
+      "bot_id": BOT_ID,
+      "text": text
+      })
       jsor=text.split(":")[1]
       options=jsor.split(" or ")
       message=random.choice(options)
