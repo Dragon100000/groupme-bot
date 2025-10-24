@@ -36,7 +36,7 @@ def webhook():
     elif text == "double send":
       message="1^2"
     elif any(word in text for word in simple_responses):
-      message=simple_response[0][word]
+      message=simple_response[word]
     elif "?" in text:
       message = random.choice(question_response)
       
