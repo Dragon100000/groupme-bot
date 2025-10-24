@@ -10,7 +10,7 @@ question_response=["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yessssss
 basic_response=["","ok","fr","lol", "what?","hmmmm...^ok"]
 greetings=["hi!","hello","hey","wsp","!-wud"]
 bruh_response=["bruh","bro","...","wth","tf"]
-reversePronouns={"me":"you","my":"your","i","you"}
+reversePronouns={"me":"you","my":"your","i":"you"}
 
 app = Flask(__name__)
 BOT_ID = os.getenv("GROUPME_BOT_ID")
