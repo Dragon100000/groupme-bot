@@ -41,7 +41,8 @@ def webhook():
       "bot_id": BOT_ID,
       "text": text
       })
-      jsor=text.split(":")[1]
+      split=text.split(":")
+      jsor=split[split.length]
       options=jsor.split(" or ")
       message=random.choice(options)
       
