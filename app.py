@@ -38,6 +38,8 @@ def webhook():
     if " or " in text:
       if ":" in text:
         jsor=text.split(":")[1]
+      else:
+        jsor=text
       options=jsor.split(" or ")
       message=random.choice(options)
       
