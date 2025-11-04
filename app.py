@@ -9,7 +9,7 @@ simple_responses={
   "sad":[":("],
   "mb":["dw ur good"],
   "nvm":["ok"],
-  "clank":["layl","yes?","yes","wut you need?","yes i here"],
+  "clank":["kayak","yes?","yes","wut you need?","yes i here"],
   "double text":["1^2"],
   "?":["yes","no","idk","maybe","kinda ig", "YES!!!!","NO","yesssssss","nooooooo","yeah","nah","nope","ya","ye","yea","..."]
 }
