@@ -19,6 +19,7 @@ bruh_response=["bruh","bro","...","wth","tf"]
 reversePronouns={
   "me":"you",
   "my":"your",
+  "should i":"you should",
   "i":"you"
 }
 
@@ -50,14 +51,17 @@ def webhook():
     #bruh
     elif any(word in text for word in bruh_response):
       message="null"
+      
+    #random number
     elif "#" in text:
       factor = 1
       if text.split("#")[1]:
         factor = int(text.split("#")[1])
       message=random.randint(1,10)*factor
+      
     #simple responses
     elif any(word in text for word in simple_responses):
-      message=simple_response[word][random.choice(simple_response[word])]
+      message=random.choice(simple_response[word])
       
     #other
     else:
