@@ -60,8 +60,8 @@ def webhook():
       message=random.randint(1,10)*factor
       
     #simple responses
-    elif any(word in text for word in simple_responses):
-      message=random.choice(simple_response[word])
+    elif any(word in simple_responses for word in text):
+      message=random.choice(simple_responses[word])
       
     #other
     else:
@@ -70,8 +70,8 @@ def webhook():
       else:
         message = "no response"
 
-    #if "!-" in message:
-      #message="wud"
+    if "!-" in message:
+      message=message.split("!-")[1]
     
     for old, new in reversePronouns.items():
       pattern = r"\b" + re.escape(old) + r"\b"  # match whole words only
